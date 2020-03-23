@@ -1,5 +1,4 @@
 module.exports = function(err, req, res, next) {
-  console.log(err , 'jgdiufguiyafgskiueqkgfiueqkgfeiukqgfhibuej')
   const stringifiedErr = JSON.stringify(err);
   if (err.code === 404) {
     res.status(err.code).json({
@@ -25,7 +24,6 @@ module.exports = function(err, req, res, next) {
     res.status(400).json({ errors });
   } else {
     console.log(err);
-
     res.status(500).json({
       message: 'Internal server error, check the console',
     });
